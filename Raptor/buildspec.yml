@@ -20,7 +20,7 @@ phases:
 
   post_build:
     commands:
-      - dotnet publish Raptor.Api/Raptor.Api.csproj -c Release -o ./publish
+      - dotnet publish -c Release -o ./app/ Raptor.Api/Raptor.Api.csproj
       - echo Build completed!
 
 artifacts:
