@@ -6,12 +6,12 @@ phases:
       dotnet: 6.0
     commands:
       - echo Installing dependencies...
-      - dotnet restore Raptor.Api/Raptor.Api.csproj
+      - dotnet restore Raptor/Raptor.Api/Raptor.Api.csproj
 
   pre_build:
     commands:
       - echo Building the project...
-      - dotnet build Raptor.Api/Raptor.Api.csproj
+      - dotnet build Raptor/Raptor.Api/Raptor.Api.csproj
 
   build:
     commands:
@@ -20,7 +20,7 @@ phases:
 
   post_build:
     commands:
-      - dotnet publish -c Release -o ./app/ Raptor.Api/Raptor.Api.csproj
+      - dotnet publish -c Release -o ./app/ Raptor/Raptor.Api/Raptor.Api.csproj
       - echo Build completed!
 
 artifacts:
