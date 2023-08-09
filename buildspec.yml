@@ -8,11 +8,11 @@ phases:
   pre_build:
     commands:
       - echo Restore started on `date`
-      - dotnet restore Raptor/Raptor.Api.csproj
+      - dotnet restore Raptor/Raptor.sln
   build:
     commands:
       - echo Build started on `date`
-      - dotnet publish -c release -o ./build_output Raptor/Raptor.Api.csproj
+      - dotnet publish -c release -o ./build_output Raptor/Raptor.sln
 artifacts:
   files:
     - ./**/*
