@@ -1,1 +1,1 @@
-web: dotnet ./Raptor/Raptor.Api.dll
+web: dotnet ./Raptor.Api.dll
