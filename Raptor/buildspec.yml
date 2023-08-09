@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - dotnet restore Raptor.sln
-      - dotnet build Raptor.sln
+      - dotnet build Raptor.sln --configuration Release
 
 artifacts:
   files:
