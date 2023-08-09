@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - dotnet publish -c release -o ./build_output Raptor/Raptor.Api.csproj
-  artifacts:
-    files:
-      - ./**/*
-    base-directory: './build_output'
+artifacts:
+  files:
+    - ./**/*
+  base-directory: './build_output'
