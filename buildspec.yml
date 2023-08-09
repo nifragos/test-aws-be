@@ -5,13 +5,15 @@ phases:
     commands:
       - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS
 
-  build:
+  pre_build:
     commands:
-      - dotnet restore Raptor/Raptor.sln
-      - dotnet build Raptor/Raptor.sln --configuration Release
-
-artifacts:
-  files:
-    - '**/*'
-  discard-paths: yes
-
+      - echo Restore started on `date`
+      - dotnet restore Raptor/Raptor.Api.csproj
+    build:
+      commands:
+        - echo Build started on `date`
+        - dotnet publish -c release -o ./build_output Raptor/Raptor.Api.csproj
+  artifacts:
+    files:
+      - ./**/*
+    base-directory: './build_output'
